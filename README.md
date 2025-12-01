@@ -1,20 +1,31 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Wozena - AI Automation (Local Dev)
 
-# Run and deploy your AI Studio app
+Lightweight React + TypeScript demo app showcasing a voice-enabled automation UI and booking/contact mocks.
 
-This contains everything you need to run your app locally.
+## Highlights
+- Live voice demo UI backed by the [`LiveVoiceAgent`](components/LiveVoiceAgent.tsx) component.
+- Local mocked backend for bookings & contact forms via [`mockBackendService`](services/mockBackend.ts).
+- Utility helpers for audio encoding/decoding in [`services/liveApiUtils.ts`](services/liveApiUtils.ts).
+- Reusable UI button component: [`Button`](components/Button.tsx).
+- Single-entry app at [`App`](App.tsx).
 
-View your app in AI Studio: https://ai.studio/apps/drive/1wJZRINKClENz3zCxhPrx8u-XOPmT_7MP
+## Repo / Important Files
+- Main app: [`App.tsx`](App.tsx) — app shell, sections & demo hooks.
+- Live voice component: [`components/LiveVoiceAgent.tsx`](components/LiveVoiceAgent.tsx)
+- Button component: [`components/Button.tsx`](components/Button.tsx)
+- Mock backend: [`services/mockBackend.ts`](services/mockBackend.ts)
+- Live audio helpers: [`services/liveApiUtils.ts`](services/liveApiUtils.ts)
+- Vite config: [`vite.config.ts`](vite.config.ts)
+- App bootstrap: [`index.tsx`](index.tsx)
+- Metadata requesting mic permission: [`metadata.json`](metadata.json)
+- TS config: [`tsconfig.json`](tsconfig.json)
+- Package manifest: [`package.json`](package.json)
 
-## Run Locally
+## Prerequisites
+- Node.js (recommended latest LTS)
+- A Gemini API key (if you want the AI features to call the real API)
 
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Local setup
+1. Install deps
+```sh
+npm install
