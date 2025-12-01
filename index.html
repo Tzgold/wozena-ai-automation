@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Automata - AI Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'slide-in-right': 'slideInRight 1s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'aurora': 'aurora 60s linear infinite',
+              'shimmer': 'shimmer 2s linear infinite',
+              'float': 'float 6s ease-in-out infinite',
+              'float-delayed': 'float 6s ease-in-out 3s infinite',
+              'grid-move': 'gridMove 20s linear infinite',
+              'meteor': 'meteor 5s linear infinite',
+              'confetti': 'confetti 3s ease-out forwards',
+              'scan': 'scan 2s linear infinite',
+              'scan-fast': 'scan 1s linear infinite',
+              'spin-3d': 'spin3d 20s linear infinite',
+              'ping-slow': 'ping 3s cubic-bezier(0, 0, 0.2, 1) infinite',
+              'shine': 'shine 3s linear infinite',
+              'reveal-up': 'revealUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards',
+              'orbit-3d': 'orbit3d 12s linear infinite',
+              'reverse-spin': 'reverseSpin 10s linear infinite',
+              'scroll': 'scroll 40s linear infinite',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              slideInRight: {
+                '0%': { opacity: '0', transform: 'translateX(50px)' },
+                '100%': { opacity: '1', transform: 'translateX(0)' },
+              },
+              aurora: {
+                '0%': { backgroundPosition: '50% 50%, 50% 50%' },
+                '100%': { backgroundPosition: '350% 50%, 350% 50%' },
+              },
+              shimmer: {
+                '0%': { backgroundPosition: '200% center' },
+                '100%': { backgroundPosition: '-200% center' }
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              },
+              gridMove: {
+                '0%': { backgroundPosition: '0 0' },
+                '100%': { backgroundPosition: '50px 50px' },
+              },
+              meteor: {
+                '0%': { transform: 'rotate(215deg) translateX(0)', opacity: '1' },
+                '70%': { opacity: '1' },
+                '100%': { transform: 'rotate(215deg) translateX(-500px)', opacity: '0' },
+              },
+              confetti: {
+                '0%': { transform: 'translateY(-10px) rotate(0deg)', opacity: '1' },
+                '100%': { transform: 'translateY(400px) rotate(720deg)', opacity: '0' },
+              },
+              scan: {
+                '0%': { top: '-100%' },
+                '100%': { top: '300%' },
+              },
+              spin3d: {
+                '0%': { transform: 'rotateX(0deg) rotateY(0deg)' },
+                '100%': { transform: 'rotateX(360deg) rotateY(360deg)' },
+              },
+              shine: {
+                '0%': { backgroundPosition: '200% 0' },
+                '100%': { backgroundPosition: '-200% 0' }
+              },
+              revealUp: {
+                '0%': { opacity: '0', transform: 'translateY(100%)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              orbit3d: {
+                '0%': { transform: 'rotateY(0deg) rotateX(15deg)' },
+                '100%': { transform: 'rotateY(360deg) rotateX(15deg)' }
+              },
+              reverseSpin: {
+                '0%': { transform: 'rotate(360deg)' },
+                '100%': { transform: 'rotate(0deg)' }
+              },
+              scroll: {
+                '0%': { transform: 'translateX(0)' },
+                '100%': { transform: 'translateX(-50%)' }
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      
+      /* Grayscale Aurora Background */
+      .bg-aurora {
+        background-image: 
+          radial-gradient(at 100% 0%, hsla(0,0%,90%,0.4) 0px, transparent 50%),
+          radial-gradient(at 0% 0%, hsla(0,0%,95%,0.4) 0px, transparent 50%);
+        background-size: 100% 100%;
+      }
+      
+      .dark .bg-aurora {
+         background-image: 
+          radial-gradient(at 100% 100%, hsla(0,0%,15%,0.3) 0px, transparent 50%),
+          radial-gradient(at 0% 0%, hsla(0,0%,10%,0.3) 0px, transparent 50%);
+      }
+
+      /* Animated Grid Background */
+      .bg-grid-pattern {
+        background-size: 50px 50px;
+        background-image: 
+          linear-gradient(to right, rgba(128, 128, 128, 0.05) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(128, 128, 128, 0.05) 1px, transparent 1px);
+      }
+
+      /* Dot Grid Background */
+      .bg-dot-pattern {
+        background-image: radial-gradient(currentColor 1px, transparent 1px);
+        background-size: 24px 24px;
+      }
+      
+      /* Hide scrollbar for clean UI in transcript */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      /* Terminal Cursor */
+      .cursor-blink {
+        animation: blink 1s step-end infinite;
+      }
+      @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+      }
+      
+      /* White Glow */
+      .glow-white {
+        box-shadow: 0 0 60px -15px rgba(255, 255, 255, 0.15);
+      }
+
+      /* 3D Transform Utilities */
+      .perspective-1000 {
+        perspective: 1000px;
+      }
+      .transform-style-3d {
+        transform-style: preserve-3d;
+      }
+      
+      /* Pause Animation Utility for Groups */
+      .group:hover .group-hover\:pause {
+        animation-play-state: paused;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-white text-zinc-900 dark:bg-[#020202] dark:text-zinc-50 transition-colors duration-300">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

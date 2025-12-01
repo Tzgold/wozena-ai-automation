@@ -1,0 +1,7 @@
+{
+  "name": "WOZENA-AI-AUTOMATION",
+  "description": "Next-generation AI automation solutions with real-time voice interaction capabilities.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
