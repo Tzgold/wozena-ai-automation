@@ -1,6 +1,6 @@
 # Wozena - AI Automation (Local Dev)
 
-Lightweight React + TypeScript demo app showcasing a voice-enabled automation UI and booking/contact mocks.
+Lightweight React + TypeScript app showcasing a voice-enabled automation UI and booking/contact mocks.
 
 ## Highlights
 - Live voice demo UI backed by the [`LiveVoiceAgent`](components/LiveVoiceAgent.tsx) component.
