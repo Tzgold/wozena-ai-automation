@@ -1,6 +1,5 @@
-# Wozena - AI Automation (Local Dev)
+# Wozena - AI Automation 
 
-Lightweight React + TypeScript app showcasing a voice-enabled automation UI and booking/contact mocks.
 
 ## Highlights
 - Live voice demo UI backed by the [`LiveVoiceAgent`](components/LiveVoiceAgent.tsx) component.
@@ -25,7 +24,3 @@ Lightweight React + TypeScript app showcasing a voice-enabled automation UI and 
 - Node.js (recommended latest LTS)
 - A Gemini API key (if you want the AI features to call the real API)
 
-## Local setup
-1. Install deps
-```sh
-npm install
