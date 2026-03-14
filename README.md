@@ -24,4 +24,3 @@
 - Node.js (recommended latest LTS)
 - A Gemini API key (if you want the AI features to call the real API)
 
-ghcgfx v kg;   kgvfyc viyt huvto vohp
