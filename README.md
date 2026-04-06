@@ -20,7 +20,4 @@
 - TS config: [`tsconfig.json`](tsconfig.json)
 - Package manifest: [`package.json`](package.json)
 
-## Prerequisites
-- Node.js (recommended latest LTS)
-- A Gemini API key (if you want the AI features to call the real API)
 
